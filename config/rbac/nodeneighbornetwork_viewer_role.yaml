@@ -1,0 +1,27 @@
+# permissions for end users to view nodeneighbornetworks.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: nodeneighbornetwork-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: neighbor-discoverer
+    app.kubernetes.io/part-of: neighbor-discoverer
+    app.kubernetes.io/managed-by: kustomize
+  name: nodeneighbornetwork-viewer-role
+rules:
+- apiGroups:
+  - neighbordiscoverer.openshift.io
+  resources:
+  - nodeneighbornetworks
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - neighbordiscoverer.openshift.io
+  resources:
+  - nodeneighbornetworks/status
+  verbs:
+  - get

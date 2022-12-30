@@ -1,0 +1,16 @@
+domain: openshift.io
+layout:
+- go.kubebuilder.io/v3
+projectName: neighbor-discoverer
+repo: github.com/pliurh/neighbor-discoverer
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: openshift.io
+  group: neighbordiscoverer
+  kind: NodeNeighborNetwork
+  path: github.com/pliurh/neighbor-discoverer/api/v1
+  version: v1
+version: "3"

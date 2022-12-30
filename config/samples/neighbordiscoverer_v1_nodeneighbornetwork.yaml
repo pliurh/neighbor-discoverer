@@ -1,0 +1,12 @@
+apiVersion: neighbordiscoverer.openshift.io/v1
+kind: NodeNeighborNetwork
+metadata:
+  labels:
+    app.kubernetes.io/name: nodeneighbornetwork
+    app.kubernetes.io/instance: nodeneighbornetwork-sample
+    app.kubernetes.io/part-of: neighbor-discoverer
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: neighbor-discoverer
+  name: nodeneighbornetwork-sample
+spec:
+  # TODO(user): Add fields here
