@@ -12,13 +12,13 @@ metadata:
   name: system
 ---
 apiVersion: apps/v1
-kind: Deployment
+kind: DaemonSet
 metadata:
   name: controller-manager
   namespace: system
   labels:
     control-plane: controller-manager
-    app.kubernetes.io/name: deployment
+    app.kubernetes.io/name: daemonset
     app.kubernetes.io/instance: controller-manager
     app.kubernetes.io/component: manager
     app.kubernetes.io/created-by: neighbor-discoverer
