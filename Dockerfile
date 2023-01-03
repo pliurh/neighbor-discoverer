@@ -29,9 +29,9 @@ RUN CGO_ENABLED=0 GOOS=${TARGETOS:-linux} GOARCH=${TARGETARCH} go build -mod=ven
 # Refer to https://github.com/GoogleContainerTools/distroless for more details
 FROM fedora
 WORKDIR /
-RUN dnf install -y libcap
+# RUN dnf install -y libcap
 COPY --from=builder /workspace/manager .
-RUN setcap cap_net_raw+ep manager
-USER 65532:65532
+# RUN setcap cap_net_raw+ep manager
+# USER 65532:65532
 
 ENTRYPOINT ["/manager"]
